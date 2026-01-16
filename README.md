@@ -127,13 +127,13 @@ Launch the Streamlit app to compare models with a fancy interface:
 streamlit run app.py
 ```
 
-![Web UI](app.png)
+![Web UI](results/app.png)
 
 ### Comparison Results
 
-![Result 1](result_1.png)
+![Result 1](results/result_1.png)
 
-![Result 2](result_2.png)
+![Result 2](results/result_2.png)
 
 Features:
 - 🔴 🟢 Side-by-side model comparison (red vs green cards)
