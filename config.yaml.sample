@@ -1,0 +1,53 @@
+# OpenAI Fine-tuning Configuration
+# Copy this file to config.yaml and fill in your values:
+#   cp config.yaml.sample config.yaml
+
+# =============================================================================
+# OpenAI API Settings
+# =============================================================================
+openai:
+  # Your OpenAI API key
+  # Get it from: https://platform.openai.com/api-keys
+  # Or leave empty to use OPENAI_API_KEY environment variable
+  api_key: ""
+  
+  # Optional: Custom API base URL (for proxies or alternative endpoints)
+  # Default OpenAI endpoint: https://api.openai.com/v1
+  # Leave empty to use the default
+  base_url: ""
+
+# =============================================================================
+# Fine-tuning Settings
+# =============================================================================
+fine_tuning:
+  # Base model to fine-tune
+  # Options: gpt-3.5-turbo, gpt-4o-mini, babbage-002, davinci-002
+  model: "gpt-3.5-turbo"
+  
+  # Path to training data file (JSONL format)
+  training_file: "fine-tuning-data.jsonl"
+  
+  # Optional: Path to validation data file (JSONL format)
+  # Used to evaluate model performance during training
+  validation_file: ""
+  
+  # Optional: Custom suffix for your fine-tuned model name
+  # e.g., "my-chatbot" → ft:gpt-3.5-turbo:org:my-chatbot:xxx
+  suffix: ""
+  
+  # Hyperparameters for training
+  # Set to "auto" to let OpenAI choose, or specify a value
+  hyperparameters:
+    # Number of training epochs (iterations over the dataset)
+    # Recommended: 3-6 for small datasets, auto for larger ones
+    n_epochs: "auto"
+    
+    # Batch size for training
+    # Larger = faster but uses more memory
+    batch_size: "auto"
+    
+    # Learning rate multiplier
+    # Higher = faster learning but may overshoot
+    # Lower = slower but more stable
+    learning_rate_multiplier: "auto"
+
